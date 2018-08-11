@@ -2,7 +2,7 @@
 const io = require('socket.io-client');
 const socket = io("https://io.lightstream.bitflyer.com", { transports: ["websocket"] });
 
-const channelName = "lightning_executions_FX_BTC_JPY";
+const channelName = "lightning_board_FX_BTC_JPY";
 socket.on("connect", () => {
     socket.emit("subscribe", channelName);
 });
@@ -17,8 +17,8 @@ var server = http.createServer(function(request, response) {
     response.end();
 });
 // server.listen(8080, function() {
-server.listen(58080, function() {
-    console.log((new Date()) + ' Server is listening on port 58080');
+server.listen(58082, function() {
+    console.log((new Date()) + ' Server is listening on port 58082');
 });
 
 wsServer = new WebSocketServer({
