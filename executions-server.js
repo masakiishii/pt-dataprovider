@@ -47,7 +47,7 @@ wsServer.on('request', function(request) {
     var connection = request.accept();
     console.log((new Date()) + ' Connection accepted.');
     socket.on(channelName, message => {
-        console.log(message);
+        // console.log(message);
 	connection.sendUTF(JSON.stringify(message));
     });
 
